@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BUY_ME_A_COFFEE_URL } from '../constants.tsx'; // Updated import
+import { BUY_ME_A_COFFEE_URL } from '../constants.tsx';
 
 const BuyMeACoffeeCard: React.FC = () => {
   return (

@@ -8,7 +8,7 @@ import { GEMINI_MODEL_NAME, GEMINI_SYSTEM_INSTRUCTION } from "../constants.tsx";
 // This variable MUST be pre-configured and accessible in the execution environment.
 // For true security in production, API calls should ideally be proxied through a backend server if this frontend code is publicly accessible.
 
-const apiKey = process.env.API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 let ai: GoogleGenAI | null = null;
 
 if (!apiKey) {

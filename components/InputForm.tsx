@@ -31,22 +31,22 @@ const InputForm: React.FC<InputFormProps> = ({
         <label className="block text-sm font-medium text-gray-700 mb-2">
           What do you want to analyze?
         </label>
-        <div className="flex space-x-4">
-          {(Object.values(InputType) as Array<InputType>).map((type) => (
-            <button
-              key={type}
-              type="button"
-              onClick={() => onInputTypeChange(type)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors
-                ${inputType === type
-                  ? 'bg-primary text-white shadow-sm'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
-            >
-              {type === InputType.TEXT ? 'Text Content' : 'Website URL'}
-            </button>
-          ))}
-        </div>
+        {/*<div className="flex space-x-4">*/}
+        {/*  {(Object.values(InputType) as Array<InputType>).map((type) => (*/}
+        {/*    <button*/}
+        {/*      key={type}*/}
+        {/*      type="button"*/}
+        {/*      onClick={() => onInputTypeChange(type)}*/}
+        {/*      className={`px-4 py-2 rounded-md text-sm font-medium transition-colors*/}
+        {/*        ${inputType === type*/}
+        {/*          ? 'bg-primary text-white shadow-sm'*/}
+        {/*          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'*/}
+        {/*        }`}*/}
+        {/*    >*/}
+        {/*      {type === InputType.TEXT ? 'Text Content' : 'Website URL'}*/}
+        {/*    </button>*/}
+        {/*  ))}*/}
+        {/*</div>*/}
       </div>
 
       <div>
