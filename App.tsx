@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [analysisPerformed, setAnalysisPerformed] = useState<boolean>(false);
+  const [submission, setSubmission] = useState("")
 
 
   const handleInputChange = useCallback((value: string) => {
@@ -50,8 +51,10 @@ const App: React.FC = () => {
       } else if (result.ranking !== RiskRanking.UNKNOWN) {
         // Save to Firestore if analysis was successful (not an API key error, etc.)
         try {
-          await saveSubmission(inputType, inputValue, result);
-          // console.log("Submission saved successfully."); // Optional: feedback to user
+          await saveSubmission(inputType, inputValue, result).then((submissionId)=>{
+            setSubmission(submissionId)
+          });
+          console.log("Submission saved successfully.");
         } catch (firestoreError) {
           console.error("Failed to save submission to Firestore:", firestoreError);
           // Append to existing error or set a new one for Firestore
@@ -107,7 +110,7 @@ const App: React.FC = () => {
           
           {analysisPerformed && <ResultDisplay result={analysisResult} />}
 
-          <FeedbackButtons analysisPerformed={analysisPerformed} />
+          <FeedbackButtons analysisPerformed={analysisPerformed} submission={submission} />
         </main>
 
         <footer className="mt-12 text-center text-sm text-gray-500">
