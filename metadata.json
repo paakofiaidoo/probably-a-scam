@@ -1,0 +1,6 @@
+{
+  "name": "Probably a Scam",
+  "description": "A web application to help users identify potential scams by analyzing text and URLs using the Gemini API. Users receive a risk assessment and can provide feedback.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

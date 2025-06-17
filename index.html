@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probably a Scam - AI Scam Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: 'rgb(var(--color-primary) / <alpha-value>)',
+            secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+            accent: 'rgb(var(--color-accent) / <alpha-value>)',
+            neutral: 'rgb(var(--color-neutral) / <alpha-value>)',
+            basecustom: 'rgb(var(--color-base) / <alpha-value>)', // Renamed from 'base' to avoid conflict
+          },
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --color-primary: 22 163 74; /* green-600 */
+        --color-secondary: 37 99 235; /* blue-600 */
+        --color-accent: 234 179 8; /* yellow-500 */
+        --color-neutral: 107 114 128; /* gray-500 */
+        --color-base: 249 250 251; /* gray-500 */
+      }
+      body {
+        @apply bg-basecustom text-neutral antialiased;
+      }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0",
+    "firebase/app": "https://esm.sh/firebase@10.12.2/app",
+    "firebase/firestore": "https://esm.sh/firebase@10.12.2/firestore",
+    "firebase/": "https://esm.sh/firebase@^11.9.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!-- Main app script -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
