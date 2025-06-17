@@ -120,6 +120,7 @@ const App: React.FC = () => {
           <BuyMeACoffeeCard />
 
           <p className="mt-4 text-xs text-gray-400">Powered by Gemini</p>
+          <p className="mt-4 text-xs text-gray-400">Built by <a href="https://paakofi.tech">Paa-Kofi Aidoo</a></p>
         </footer>
       </div>
     </div>
