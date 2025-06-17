@@ -13,7 +13,6 @@ let ai: GoogleGenAI | null = null;
 
 if (!apiKey) {
   console.error("API_KEY is not set. Please ensure the API_KEY environment variable is configured.");
-  // The app will proceed but `analyzeContent` will return an error state.
 } else {
   try {
     ai = new GoogleGenAI({ apiKey: apiKey });
@@ -38,7 +37,7 @@ export const analyzeContent = async (
   if (!apiKey) {
     return {
       ranking: RiskRanking.UNKNOWN,
-      explanation: "Gemini API Key (API_KEY) is not configured. Please ensure the environment variable is set."
+      explanation: "Error accessing system"
     };
   }
   if (!ai) {
@@ -65,6 +64,7 @@ ${content}
       },
     });
     
+    // @ts-ignore
     let jsonStr = response.text.trim();
     const fenceRegex = /^```(\w*)?\s*\n?(.*?)\n?\s*```$/s; // Matches ```json ... ``` or ``` ... ```
     const match = jsonStr.match(fenceRegex);
