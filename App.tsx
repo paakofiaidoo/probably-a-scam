@@ -117,7 +117,7 @@ const App: React.FC = () => {
           <p>&copy; {new Date().getFullYear()} Probably a Scam. AI analysis for educational purposes.</p>
           <p className="mt-1">Remember: AI analysis is a tool, not a guarantee. Always exercise caution.</p>
           
-          <BuyMeACoffeeCard />
+          {/*<BuyMeACoffeeCard />*/}
 
           <p className="mt-4 text-xs text-gray-400">Powered by Gemini</p>
           <p className="mt-4 text-xs text-gray-400">Built by <a href="https://paakofi.tech">Paa-Kofi Aidoo</a></p>
